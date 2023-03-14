@@ -1,0 +1,31 @@
+<mvc:View
+	controllerName="githubapiui5.controller.OrgPanel"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	displayBlock="true"
+	height="100%"
+	busyIndicatorDelay="0"
+>
+	<Panel
+		headerText="Organizations"
+		class="sapUiResponsiveMargin"
+		width="auto"
+	>
+		<List
+			class="sapUiResponsiveMargin"
+			width="auto"
+			items="{
+				path: 'orgs>/'
+			}"
+		>
+			<items>
+				<ObjectListItem
+					activeIcon=""
+					icon=""
+					numberUnit=""
+					title="{orgs>login}"
+				/>
+			</items>
+		</List>
+	</Panel>
+</mvc:View>

@@ -1,0 +1,47 @@
+<mvc:View
+	controllerName="githubapiui5.controller.Main"
+	xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true"
+	xmlns="sap.m"
+>
+	<Page
+		id="page"
+		title="{i18n>title}"
+	>
+		<headerContent>
+			<Label text="{i18n>usernamePrompt}"/>
+			<Input
+				value="{/username}"
+				valueLiveUpdate="true"
+				width="60%"
+				submit=".loadModel"
+			/>
+		</headerContent>
+		<content>
+			<IconTabBar
+				applyContentPadding="false"
+				expandable="false"
+				selectedKey="repos"
+			>
+				<items>
+					<IconTabFilter
+						text="Repositories"
+						key="repos"
+					>
+						<content>
+							<mvc:XMLView viewName="githubapiui5.view.RepoPanel"/>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter
+						text="Organizations"
+						key="orgs"
+					>
+						<content>
+							<mvc:XMLView viewName="githubapiui5.view.OrgPanel"/>
+						</content>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</mvc:View>
